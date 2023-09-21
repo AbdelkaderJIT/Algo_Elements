@@ -1,0 +1,31 @@
+ALGORITHM algorithm_name
+VAR
+    SentenceCount : INTEGER :=0;
+    WordsCount: INTEGER := 0;
+    VowelsCount: INTEGER := 0;
+    Sentence: CHAR := '';
+
+BEGIN
+ 
+    WHILE (Sentence <> '.') DO
+    Read (Sentence);
+    SentenceCount = SentenceCount +1;
+
+    SWITCH (Sentence) DO
+        case ('a' or 'A') : VowelsCount := VowelsCount +1;  break;
+        case ('e' or 'E') : VowelsCount := VowelsCount +1;  break;
+        case ('y' or 'Y') : VowelsCount := VowelsCount +1;  break;
+        case ('e' or 'E') : VowelsCount := VowelsCount +1;  break;
+        case ('u' or 'U') : VowelsCount := VowelsCount +1;  break;
+        case ('i' or 'I') : VowelsCount := VowelsCount +1;  break;
+        case ('o' or 'O') : VowelsCount := VowelsCount +1;  break;
+        case (' ' ) : WordsCount := WordsCount +1;  break;
+    END_SWITCH
+
+    END_WHILE
+
+    SentenceCount:= SentenceCount - 1;
+    
+    Write ("This is the Sentence count", SentenceCount,"This is the vowels count" , VowelsCount , "this is the words count" ,WordsCount)
+END
+
